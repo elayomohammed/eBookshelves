@@ -1,3 +1,17 @@
+body {
+    min-width: max-content;
+    max-width: 100%;
+    background-color: rgb(60, 60, 60);
+}
+
+hr {
+    height: 10px;
+    background-color: rgb(60, 60, 60);
+}
+h4 {
+    text-align: center;
+}
+
 #logo-search-menubtn {
     background-color: rgb(60, 60, 60);
     max-height: 30px;
@@ -5,6 +19,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border: solid rgb(117, 168, 117) 2px;
 }
 #search-box {
     max-height: 25px;
@@ -14,11 +29,53 @@
 }
 
 nav {
+    background-color:rgb(142, 166, 142);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 nav li {
     list-style-type: none;
+}
+nav li a{
+    text-decoration: none;
+}
+
+#section {
+    background-color:rgb(117, 168, 117);
+    margin-top: 0px;
+}
+#section-one, #section-two {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#section-one li {
+    border: solid rgb(60, 60, 60) 1px;
+    padding: 25px 50px;
+    border-radius: 10%;
+}
+#section-two li {
+    border: solid rgb(60, 60, 60) 1px;
+    padding: 25px 50px;
+    border-radius: 10%;
+}
+
+#footer-items {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color:rgb(142, 166, 142);
+}
+#footer-items li a {
+    text-decoration: none;
+}
+#rights {
+    text-align: center;
+    color: white;
 }
