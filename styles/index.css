@@ -5,11 +5,16 @@ body {
 }
 
 hr {
-    height: 10px;
+    height: 1px;
     background-color: rgb(60, 60, 60);
+    border-radius: 0% 20%;
 }
 h4 {
     text-align: center;
+    margin: auto auto 2px auto;
+}
+#recent-book-title {
+    padding-top: 10px;
 }
 
 #logo-search-menubtn {
@@ -23,9 +28,25 @@ h4 {
 }
 #search-box {
     max-height: 25px;
+    border-radius: 0px 10px 0px 10px;
 }
 #menu-btn {
+    margin-right: 2px;
+    height: 25px;
+    width: 35px;
     list-style-type: none;
+    border: solid rgb(142, 166, 142) 2px;
+    border-radius: 0px 10px 0px 10px;
+    max-height: 30px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.menu-btn-build {
+    border: solid rgb(117, 168, 117) 0.5px;
+    border-radius: 0px 10px 0px 10px;
+    height: 25px;
+    width: 35px;
 }
 
 nav {
@@ -45,6 +66,7 @@ nav li a{
 #section {
     background-color:rgb(117, 168, 117);
     margin-top: 0px;
+    border-radius: 20px;
 }
 #section-one, #section-two {
     list-style-type: none;
@@ -52,16 +74,26 @@ nav li a{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    border: solid rgb(60, 60, 60) 2px;
+    border-radius: 20px;
+    min-height: 200px;
 }
 #section-one li {
     border: solid rgb(60, 60, 60) 1px;
     padding: 25px 50px;
     border-radius: 10%;
+    margin: 10px auto 10px auto;
+    background-color:rgb(142, 166, 142);
+    height: 120px;
+    width: 150px;
 }
 #section-two li {
     border: solid rgb(60, 60, 60) 1px;
     padding: 25px 50px;
     border-radius: 10%;
+    margin: 10px auto 10px auto;
+    background-color:rgb(142, 166, 142);
+    height: 120px;
 }
 
 #footer-items {
@@ -78,4 +110,76 @@ nav li a{
 #rights {
     text-align: center;
     color: white;
+}
+
+/* Book Lists and output section */
+#folder-and-output-section {
+    height: 700px;
+    background-color:rgb(117, 168, 117);
+    margin: 16px auto 16px auto;
+    border-radius: 20px;;
+}
+#booklist {
+    position: absolute;
+    float: left;
+    width: 30%;
+    height: 700px;
+    border: solid rgb(60, 60, 60) 2px;
+    border-radius: 20px;
+    margin-top: 9px;
+}
+#book-upload {
+    display: none;
+}
+#book-upload-label {
+    cursor: pointer;
+    border: solid rgb(60, 60, 60) 2px;
+    border-radius: 0px 10px 0px 10px;
+    padding: 1.5px;
+}
+#add-ebooklist-btn {
+    cursor: pointer;
+    border: solid rgb(60, 60, 60) 2px;
+    border-radius: 0px 10px 0px 10px;
+    padding: 2px;
+    background-color:rgb(117, 168, 117);
+    display: none;
+    margin-top: 0px;
+}
+#selected-book-info {
+    display: none;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    border: solid rgb(60, 60, 60) 2px;
+    border-radius: 10px;
+    padding: 2px;
+    background-color:rgb(117, 168, 117);
+    color: white;
+    max-width: 100%;
+    height: 25px;
+    font-size: 11px;
+}
+
+#book-title {
+    color: white;
+}
+#books-output {
+    position: absolute;
+    margin-left: 30.5%;
+    width: 69.5%;
+    height: 700px;
+    border: solid rgb(60, 60, 60) 2px;
+    border-radius: 20px;
+    margin-top: 9px;
+}
+.injected-booklist {
+    list-style: none;
+    cursor: pointer;
+    border: solid rgb(60, 60, 60) 2px;
+    border-radius: 0px 10px 0px 5px;
+    margin: 2px;
+    padding: 1px 2px 1px 3px;
+    color: white;
+    max-width: 100%;
+    font-size: 11px;
 }

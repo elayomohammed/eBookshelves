@@ -5,27 +5,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>eBookshelves</title>
         <link rel="stylesheet" type="text/css" href="../styles/index.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js"></script>
     </head>
     <bod>
         <!--logo, search and menu section-->
         <div id="logo-search-menubtn">
             <h3 id="app-logo">eBookshelves</h3>
-            <input id="search-box" type="search" placeholder="quick search" />
-            <li id="menu-btn">MenuBTN</li>
+            <input id="search-box" type="search" placeholder="search booklist" />
+            <div id="menu-btn">
+                <li class="menu-btn-build"></li>
+                <li class="menu-btn-build"></li>
+                <li class="menu-btn-build"></li>
+            </div>
         </div>
 
         <!--navigation section-->
         <nav id="nav-menu">
             <li><a href='../index.html'>Home</a></li>
-            <li><a href='./folders.html'>Books Folders</a></li>
-            <li><a href='./explore.html'>Explore Books</a></li>
+            <li><a href='./folders.html'>eBook List</a></li>
+            <li><a href='./explore.html'>eBook Explorer</a></li>
             <li><a href='./about.html'>About eBookshelves</a></li>
         </nav>
 
         <!--section where folders can be created to list and access listed books--
         together with an output section for viewing the listed-->
-        <section>
-
+        <section id="folder-and-output-section">
+            <div id="booklist">
+                <h4>My eBook List</h4><hr />
+                <label id="book-upload-label" for="book-upload">Find Local eBooks</label>
+                <input type="file" id="book-upload" accept=".pdf" multiple onchange="handleBookUpload(event)" />
+                <p id="selected-book-info"></p>
+                <button type="button" id="add-ebooklist-btn">Add to eBook List</button><hr />
+                <div id="listed-books"></div>
+            </div>
+            <div id="books-output">
+                <h4 id="book-title">Book Title</h4><hr />
+                <p style="text-align: center;">your book will be rendered here...</p>
+            </div>
         </section>
 
         <!--footer section-->
@@ -37,5 +54,6 @@
             </div>
             <p id="rights">All rights reserved @2023 eBookshelves</p>
         </footer>
+        <script type="text/javascript" src="../scrips/index.js"></script>
     </bod>
 </html>
