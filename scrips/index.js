@@ -30,10 +30,18 @@ request.onsuccess = (event) =>{
                 addToBooklistTx.onerror = (event) =>{
                     console.error(`error adding to booklist: ${event.target.error}`);
                     alert(`error adding to booklist: ${event.target.error}`);
+                    const bookToUploadDetailsOutput = document.getElementById('selected-book-info');
+                    const bookUploadBtn = document.getElementById('add-ebooklist-btn');
+                    bookToUploadDetailsOutput.style.display = 'none';
+                    bookUploadBtn.style.display = 'none';
                 }
                 addToBooklistTx.onsuccess = (event) =>{
-                    console.log(`book added to the list succesfully with the name: ${event.target.result}`);
-                    alert(`book added to the list succesfully with the name: ${event.target.result}`);
+                    console.log(`${event.target.result} have been added to your booklists successfully :)...`);
+                    alert(`${event.target.result} have been added to your booklists successfully :)...`);
+                    const bookToUploadDetailsOutput = document.getElementById('selected-book-info');
+                    const bookUploadBtn = document.getElementById('add-ebooklist-btn');
+                    bookToUploadDetailsOutput.style.display = 'none';
+                    bookUploadBtn.style.display = 'none';
                 }
             }
         });
@@ -68,6 +76,20 @@ request.onsuccess = (event) =>{
             if(event){
                 document.getElementById('book-title').textContent = event.target.textContent;
                 // use the textContent to search and retrive and render book from the db
+                const transaction = db.transaction('booklist').objectStore('booklist');
+                const getBookToRenderTx = transaction.get(event.target.textContent);
+                getBookToRenderTx.onerror = (event) =>{
+                    console.error(`error getting book: ${event.target.error}`);
+                }
+                getBookToRenderTx.onsuccess = (event) =>{
+                    console.log('book retrieved successfully');
+                    const reader = new FileReader();
+                    reader.readAsDataURL(event.target.result);
+                    reader.onload = (event) =>{
+                        PDFObject.embed(event.target.result, '#book-output');
+                        console.log(event.target.result);
+                    }
+                }
             }else{
                 console.log('error reading event data...');
             }
