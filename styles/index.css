@@ -137,6 +137,9 @@ nav li a{
     border: solid rgb(60, 60, 60) 2px;
     border-radius: 0px 10px 0px 10px;
     padding: 1.5px;
+    background-color: rgb(60, 60, 60);
+    color: white;
+    padding: 2px;
 }
 #add-ebooklist-btn {
     cursor: pointer;
@@ -146,6 +149,9 @@ nav li a{
     background-color:rgb(117, 168, 117);
     display: none;
     margin-top: 0px;
+    background-color: rgb(60, 60, 60);
+    color: white;
+    padding: 2px;
 }
 #selected-book-info {
     display: none;
@@ -188,6 +194,9 @@ nav li a{
     color: white;
     max-width: 100%;
     font-size: 11px;
+    background-color: rgb(60, 60, 60);
+    color: white;
+    padding: 2px;
 }
 
 /* about page section */
@@ -240,4 +249,42 @@ nav li a{
     border: solid rgb(60, 60, 60) 2px;
     border-radius: 0px 20px 0px 20px;
     padding: 15px;
+}
+
+/* devs contact page */
+#dev-contact-page {
+    background-color:rgb(117, 168, 117);
+    margin: 18px 0px 18px 0px;
+    border-radius: 20px;
+    height: 520px;
+    max-height: 700px;
+}
+.contact-title {
+    padding-top: 10px;
+}
+#dev-contact-details {
+    border: solid rgb(60, 60, 60) 2px;
+    border-radius: 20px 0px 20px 0px;
+    margin: 12px 20% 0px 20%;
+    padding: 15px;
+    width: 60%;
+    color: white;
+    line-height: 25px;
+    font-size: 20px;
+}
+#contact-devs {
+    border: solid rgb(60, 60, 60) 2px;
+    border-radius: 20px 0px 20px 0px;
+    margin: 12px 20% 0px 20%;
+    padding: 15px;
+    width: 60%;
+    color: white;
+    line-height: 25px;
+    font-size: 20px;
+}
+#submit {
+    cursor: pointer;
+    background-color: rgb(60, 60, 60);
+    color: white;
+    padding: 2px;
 }
