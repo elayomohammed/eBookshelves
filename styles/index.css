@@ -1,6 +1,14 @@
 body {
-    width: 100%;
+    width: 99%;
     background-color: rgb(60, 60, 60);
+}
+
+.app-logo {
+    height: 28.5px;
+    margin-top: 2px 0px 0px 0px;
+    border: solid rgb(60, 60, 60) 1px;
+    padding: 5px 5px 5px 0px;
+    border-radius: 10px;
 }
 
 hr {
@@ -20,7 +28,7 @@ h4 {
 
 #logo-search-menubtn {
     background-color: rgb(60, 60, 60);
-    max-height: 30px;
+    height: 42px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -28,12 +36,12 @@ h4 {
     border: solid rgb(117, 168, 117) 2px;
 }
 #search-box {
-    max-height: 25px;
+    height: 25px;
     border-radius: 0px 10px 0px 10px;
 }
 #menu-btn {
     margin-right: 2px;
-    height: 25px;
+    height: 30px;
     width: 35px;
     list-style-type: none;
     border: solid rgb(142, 166, 142) 2px;
