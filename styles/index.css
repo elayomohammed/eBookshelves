@@ -1,5 +1,6 @@
 body {
     width: 99%;
+    min-height: 99%;
     background-color: rgb(60, 60, 60);
 }
 
@@ -21,9 +22,6 @@ hr {
 h4 {
     text-align: center;
     margin: 5px auto 2px auto;
-}
-#recent-book-title {
-    padding-top: 10px;
 }
 
 #logo-search-menubtn {
@@ -103,6 +101,9 @@ nav li a{
     margin: 10px auto 10px auto;
     background-color:rgb(142, 166, 142);
     height: 120px;
+}
+#recent-book-title {
+    padding-top: 10px;
 }
 
 #footer-items {
@@ -233,13 +234,13 @@ nav li a{
     background-color:rgb(117, 168, 117);
     margin: 18px 0px 18px 0px;
     border-radius: 20px;
-    height: 400px;
-    max-height: 700px;
+    height: auto;
+    padding-bottom: 1%;
 }
 #faq-list {
     border: solid rgb(60, 60, 60) 2px;
     border-radius: 20px 0px 20px 0px;
-    margin: 12px 20% 0px 20%;
+    margin: 2% 20% 2% 20%;
     padding: 15px;
     width: 60%;
     color: white;
