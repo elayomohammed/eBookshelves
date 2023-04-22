@@ -62,12 +62,18 @@ nav {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    height: 25px;
 }
 nav li {
     list-style-type: none;
 }
 nav li a{
     text-decoration: none;
+    border: solid rgb(60, 60, 60) 1px;
+    border-radius: 0px 10px 0px 10px;
+    background-color: rgb(60, 60, 60);
+    color: white;
+    padding: 2px;
 }
 
 #home-section {
@@ -113,9 +119,15 @@ nav li a{
     justify-content: space-around;
     align-items: center;
     background-color:rgb(142, 166, 142);
+    height: 27px;
 }
 #footer-items li a {
     text-decoration: none;
+    border: solid rgb(60, 60, 60) 1px;
+    border-radius: 0px 10px 0px 10px;
+    background-color: rgb(60, 60, 60);
+    color: white;
+    padding: 2px;
 }
 #rights {
     text-align: center;
@@ -145,10 +157,10 @@ nav li a{
     cursor: pointer;
     border: solid rgb(60, 60, 60) 2px;
     border-radius: 0px 10px 0px 10px;
-    padding: 1.5px;
     background-color: rgb(60, 60, 60);
     color: white;
     padding: 2px;
+    margin-left: 2px;
 }
 #add-ebooklist-btn {
     cursor: pointer;
