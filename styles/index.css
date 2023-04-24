@@ -37,18 +37,11 @@ h4 {
     height: 25px;
     border-radius: 0px 10px 0px 10px;
 }
+/*making menu button responsive*/
 #menu-btn {
-    margin-right: 2px;
-    height: 30px;
-    width: 35px;
-    list-style-type: none;
-    border: solid rgb(142, 166, 142) 2px;
-    border-radius: 0px 10px 0px 10px;
-    max-height: 30px;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
+    display: none;
 }
+
 .menu-btn-build {
     border: solid rgb(117, 168, 117) 0.5px;
     border-radius: 0px 10px 0px 10px;
@@ -56,16 +49,40 @@ h4 {
     width: 35px;
 }
 
-nav {
+#nav-menu {
     background-color:rgb(142, 166, 142);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
-    height: 25px;
+    justify-items: center;
+    height: 30px;
+    border: solid rgb(117, 168, 117) 2px;
+    padding-bottom: 2px;
 }
+
+@media screen and (max-width: 650px){
+    #menu-btn {
+        margin-right: 2px;
+        height: 30px;
+        width: 35px;
+        list-style-type: none;
+        border: solid rgb(142, 166, 142) 2px;
+        border-radius: 0px 10px 0px 10px;
+        max-height: 30px;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    #nav-menu {
+        display: none;
+    }
+}
+
 nav li {
     list-style-type: none;
+    margin-top: 10px;
+    align-items: center;
 }
 nav li a{
     text-decoration: none;
@@ -73,7 +90,7 @@ nav li a{
     border-radius: 0px 10px 0px 10px;
     background-color: rgb(60, 60, 60);
     color: white;
-    padding: 2px;
+    padding: 3px;
 }
 
 #home-section {
@@ -119,7 +136,8 @@ nav li a{
     justify-content: space-around;
     align-items: center;
     background-color:rgb(142, 166, 142);
-    height: 27px;
+    height: 30px;
+    padding-bottom: 1px;
 }
 #footer-items li a {
     text-decoration: none;
@@ -127,7 +145,7 @@ nav li a{
     border-radius: 0px 10px 0px 10px;
     background-color: rgb(60, 60, 60);
     color: white;
-    padding: 2px;
+    padding: 3px;
 }
 #rights {
     text-align: center;
@@ -225,7 +243,8 @@ nav li a{
     background-color:rgb(117, 168, 117);
     margin: 18px 0px 18px 0px;
     border-radius: 20px;
-    height: 350px;
+    height: auto;
+    padding-bottom: 2%;
 }
 #about-note {
     border: solid rgb(60, 60, 60) 2px;
@@ -302,6 +321,9 @@ nav li a{
     color: white;
     line-height: 25px;
     font-size: 20px;
+}
+#message {
+    width: auto;
 }
 #submit {
     cursor: pointer;
