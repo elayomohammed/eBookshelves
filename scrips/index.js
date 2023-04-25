@@ -113,30 +113,19 @@ const handleBookUpload = (event) =>{
 }
 
 // making menu button responsive
-const menubtn = document.getElementById('menu-btn');
-const nav = document.getElementById('nav-menu');
-const navLinks = document.getElementsByClassName('nav-links');
-const menubtnClick = async() =>{
 
-    menubtn.addEventListener('click', ()=>{
-        if(nav.style.display = 'none'){
-            nav.style.display = 'block';
-            nav.style.backgroundColor = 'rgb(60, 60, 60)';
-            nav.style.height = 'auto';
-            nav.style.width = '150px';
-            nav.style.position = 'fixed';
-            nav.style.top = '54px';
-            nav.style.right = '5px';
-            nav.style.margin = '1px 0px 0px 350px'
-            nav.style.padding = '5px';
-            navLinks[0].style.backgroundColor = 'rgb(142, 166, 142)';
-            navLinks[0].style.color = 'black';
-            navLinks[1].style.backgroundColor = 'rgb(142, 166, 142)';
-            navLinks[1].style.color = 'black';
-            navLinks[2].style.backgroundColor = 'rgb(142, 166, 142)';
-            navLinks[2].style.color = 'black';
-            navLinks[3].style.backgroundColor = 'rgb(142, 166, 142)';
-            navLinks[3].style.color = 'black';
+const menubtnClick = () =>{
+    const menubtn = document.getElementById('menu-btn');
+    menubtn.addEventListener('click', () =>{
+        let nav = document.querySelector('nav');
+        console.log(nav.style.display);
+        if(nav.style.display === 'none'){
+            nav.classList.remove('nav-menu');
+            nav.style.display = 'flex';
+            nav.classList.add('open-close-menu');
+            console.log(nav.classList[0]);
+        }else{
+            nav.style.display = 'none';
         }
     })
 }
