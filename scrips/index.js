@@ -113,17 +113,14 @@ const handleBookUpload = (event) =>{
 }
 
 // making menu button responsive
-
 const menubtnClick = () =>{
     const menubtn = document.getElementById('menu-btn');
-    menubtn.addEventListener('click', () =>{
-        let nav = document.querySelector('nav');
-        console.log(nav.style.display);
+    let nav = document.querySelector('nav');
+    menubtn.addEventListener('click', (event) =>{
         if(nav.style.display === 'none'){
             nav.classList.remove('nav-menu');
             nav.style.display = 'flex';
             nav.classList.add('open-close-menu');
-            console.log(nav.classList[0]);
         }else{
             nav.style.display = 'none';
         }
