@@ -1,6 +1,6 @@
 body {
     width: 99%;
-    height: auto;
+    height: 99%;
     background-color: rgb(60, 60, 60);
 }
 
@@ -22,11 +22,12 @@ hr {
 h4 {
     text-align: center;
     margin: 5px auto 2px auto;
+    font-size: larger;
 }
 
 #logo-search-menubtn {
     background-color: rgb(60, 60, 60);
-    height: 42px;
+    height: 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -54,9 +55,9 @@ h4 {
     flex-direction: row;
     justify-content: space-around;
     justify-items: center;
-    height: 30px;
+    height: 18%;
     border: solid rgb(117, 168, 117) 1px;
-    padding-bottom: 2px;
+    padding-bottom: 3px;
     margin: 0px 10px 0px 10px;
     border-radius: 10px;
 }
@@ -66,10 +67,11 @@ h4 {
     flex-direction: column;
     align-items: center;
     height: auto;
-    width: 100%;
+    width: 95%;
     padding: 4px;
     border: solid rgb(60, 60, 60) 1px;
     border-radius: 20px;
+    margin-left: 1%;
 }
 .open-close-menu li {
     list-style-type: none;
@@ -102,6 +104,9 @@ h4 {
     .nav-menu {
         display: none;
     }
+    body {
+        height: 98%;
+    }
 }
 
 .nav-menu li {
@@ -118,12 +123,12 @@ h4 {
     padding: 3px;
 }
 
-#home-section {
+.home-section {
     background-color:rgb(117, 168, 117);
     margin-top: 0px;
     border-radius: 20px;
 }
-#section-one, #section-two {
+.section-one, .section-two {
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -133,7 +138,7 @@ h4 {
     border-radius: 20px;
     min-height: 200px;
 }
-#section-one li {
+.section-one li {
     border: solid rgb(60, 60, 60) 1px;
     padding: 25px 50px;
     border-radius: 10%;
@@ -142,7 +147,7 @@ h4 {
     height: 120px;
     width: 150px;
 }
-#section-two li {
+.section-two li {
     border: solid rgb(60, 60, 60) 1px;
     padding: 25px 50px;
     border-radius: 10%;
@@ -177,6 +182,37 @@ h4 {
 #rights {
     text-align: center;
     color: white;
+}
+@media screen and (max-width: 650px){
+    .section-one, .section-two {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border: solid rgb(60, 60, 60) 1px;
+        border-radius: 20px;
+        height: auto;
+    }
+
+    .section-one li {
+        border: solid rgb(60, 60, 60) 1px;
+        padding: 25px 50px;
+        border-radius: 10%;
+        margin: 10px auto 10px auto;
+        background-color:rgb(142, 166, 142);
+        height: 120px;
+        width: 200px;
+    }
+    .section-two li {
+        border: solid rgb(60, 60, 60) 1px;
+        padding: 25px 50px;
+        border-radius: 10%;
+        margin: 10px auto 10px auto;
+        background-color:rgb(142, 166, 142);
+        height: 120px;
+        width: 250px;
+    }
 }
 
 /* Book Lists and output section */
