@@ -87,28 +87,6 @@ h4 {
     padding: 3px;
 }
 
-@media screen and (max-width: 650px){
-    #menu-btn {
-        margin-right: 2px;
-        height: 30px;
-        width: 35px;
-        list-style-type: none;
-        border: solid rgb(142, 166, 142) 1px;
-        border-radius: 0px 10px 0px 10px;
-        max-height: 30px;
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-    }
-
-    .nav-menu {
-        display: none;
-    }
-    body {
-        height: 98%;
-    }
-}
-
 .nav-menu li {
     list-style-type: none;
     margin-top: 10px;
@@ -183,37 +161,6 @@ h4 {
     text-align: center;
     color: white;
 }
-@media screen and (max-width: 650px){
-    .section-one, .section-two {
-        list-style-type: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        border: solid rgb(60, 60, 60) 1px;
-        border-radius: 20px;
-        height: auto;
-    }
-
-    .section-one li {
-        border: solid rgb(60, 60, 60) 1px;
-        padding: 25px 50px;
-        border-radius: 10%;
-        margin: 10px auto 10px auto;
-        background-color:rgb(142, 166, 142);
-        height: 120px;
-        width: 200px;
-    }
-    .section-two li {
-        border: solid rgb(60, 60, 60) 1px;
-        padding: 25px 50px;
-        border-radius: 10%;
-        margin: 10px auto 10px auto;
-        background-color:rgb(142, 166, 142);
-        height: 120px;
-        width: 250px;
-    }
-}
 
 /* Book Lists and output section */
 #folder-and-output-section {
@@ -271,6 +218,9 @@ h4 {
 #book-title {
     color: white;
 }
+#listed-books {
+    overflow: auto;
+}
 #book-output {
     height: 650px;
     width: 98%;
@@ -288,14 +238,14 @@ h4 {
     list-style: none;
     cursor: pointer;
     border: solid rgb(60, 60, 60) 1px;
-    border-radius: 0px 10px 0px 5px;
+    border-radius: 0px 5px 0px 5px;
     margin: 2px;
-    padding: 1px 2px 1px 3px;
+    padding: 1px 5px 1px 3px;
     color: white;
-    width: auto;
+    width: max-content;
     font-size: 11px;
     background-color: rgb(60, 60, 60);
-    color: white;
+    height: fit-content;
 }
 
 /* about page section */
@@ -303,7 +253,7 @@ h4 {
     background-color:rgb(117, 168, 117);
     margin: 18px 0px 18px 0px;
     border-radius: 20px;
-    height: auto;
+    height: 665px;
     padding-bottom: 2%;
 }
 #about-note {
@@ -356,11 +306,11 @@ h4 {
     background-color:rgb(117, 168, 117);
     margin: 18px 0px 18px 0px;
     border-radius: 20px;
-    height: 520px;
-    max-height: 700px;
+    height: auto;
+    padding-bottom: 10px;
 }
 .contact-title {
-    padding-top: 10px;
+    padding: 20px 0px 5px 0px;
 }
 #dev-contact-details {
     border: solid rgb(60, 60, 60) 1px;
@@ -377,6 +327,7 @@ h4 {
     border-radius: 20px 0px 20px 0px;
     margin: 12px 20% 0px 20%;
     padding: 15px;
+    height: auto;
     width: 60%;
     color: white;
     line-height: 25px;
@@ -390,4 +341,125 @@ h4 {
     background-color: rgb(60, 60, 60);
     color: white;
     padding: 2px;
+}
+
+
+/* media querries */
+@media screen and (max-width: 650px){
+    #menu-btn {
+        margin-right: 2px;
+        height: 30px;
+        width: 35px;
+        list-style-type: none;
+        border: solid rgb(142, 166, 142) 1px;
+        border-radius: 0px 10px 0px 10px;
+        max-height: 30px;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+    body {
+        height: 98%;
+    }
+
+    .section-one, .section-two {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border: solid rgb(60, 60, 60) 1px;
+        border-radius: 20px;
+        height: auto;
+    }
+
+    .section-one li {
+        border: solid rgb(60, 60, 60) 1px;
+        padding: 25px 50px;
+        border-radius: 10%;
+        margin: 10px auto 10px auto;
+        background-color:rgb(142, 166, 142);
+        height: 120px;
+        width: 200px;
+    }
+    .section-two li {
+        border: solid rgb(60, 60, 60) 1px;
+        padding: 25px 50px;
+        border-radius: 10%;
+        margin: 10px auto 10px auto;
+        background-color:rgb(142, 166, 142);
+        height: 120px;
+        width: 250px;
+    }
+    
+    #faq-section {
+        background-color:rgb(117, 168, 117);
+        margin: 18px 0px 18px 0px;
+        border-radius: 20px;
+        height: auto;
+        padding: 25% 0% 21% 1%;
+    }
+    #faq-list {
+        border: solid rgb(60, 60, 60) 1px;
+        border-radius: 20px 0px 20px 0px;
+        margin: 10px 0px 10px 20px;
+        padding: 20% 15px 15px 15px;
+        width: 80%;
+        height: auto;
+        color: white;
+        line-height: 25px;
+        font-size: 20px;
+    }
+    
+    #about-ebookshelves {
+        background-color:rgb(117, 168, 117);
+        margin: 18px 0px 18px 0px;
+        border-radius: 20px;
+        height: 595px;
+        padding: 15% 0% 5% 0%;
+    }
+    #about-note {
+        border: solid rgb(60, 60, 60) 1px;
+        border-radius: 20px 0px 20px 0px;
+        margin: 5px 5% 5px 8%;
+        padding: 12% 15px 15px 15px;
+        width: 75%;
+        height: 77%;
+        color: white;
+        line-height: 25px;
+        font-size: 20px;
+    }
+
+    #dev-contact-details {
+        border: solid rgb(60, 60, 60) 1px;
+        border-radius: 20px 0px 20px 0px;
+        margin: 12px 20% 0px 7%;
+        padding: 15px;
+        width: 80%;
+        color: white;
+        line-height: 25px;
+        font-size: 20px;
+    }
+    #contact-devs {
+        border: solid rgb(60, 60, 60) 1px;
+        border-radius: 20px 0px 20px 0px;
+        margin: 12px 20% 0px 7%;
+        padding: 5% 15px 15px 15px;
+        margin-top: 10%;
+        width: 80%;
+        color: white;
+        line-height: 25px;
+        font-size: 20px;
+    }
+    #dev-contact-page {
+        background-color:rgb(117, 168, 117);
+        margin: 18px 0px 18px 0px;
+        border-radius: 20px;
+        height: 615px;
+        padding: 7% 0% 5% 0%;
+    }
 }
