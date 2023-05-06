@@ -32,7 +32,6 @@ h4 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: solid rgb(117, 168, 117) 1px;
 }
 #search-box {
     height: 25px;
@@ -113,26 +112,28 @@ h4 {
     justify-content: space-around;
     align-items: center;
     border: solid rgb(60, 60, 60) 1px;
-    border-radius: 20px;
-    min-height: 200px;
+    border-radius: 10px;
+    height: fit-content;
 }
 .section-one li {
     border: solid rgb(60, 60, 60) 1px;
     padding: 25px 50px;
     border-radius: 10%;
     margin: 10px auto 10px auto;
-    background-color:rgb(142, 166, 142);
+    background-color:rgb(60, 60, 60);
     height: 120px;
     width: 150px;
 }
-.section-two li {
+.section-two iframe {
     border: solid rgb(60, 60, 60) 1px;
-    padding: 25px 50px;
-    border-radius: 10%;
+    padding: 10px 10px;
+    border-radius: 5%;
     margin: 10px auto 10px auto;
-    background-color:rgb(142, 166, 142);
-    height: 120px;
+    background-color:rgb(60, 60, 60);
+    height: 450px;
+    width: 330px;
 }
+
 #recent-book-title {
     padding-top: 10px;
 }
@@ -253,7 +254,7 @@ h4 {
     background-color:rgb(117, 168, 117);
     margin: 18px 0px 18px 0px;
     border-radius: 20px;
-    height: 665px;
+    height: auto;
     padding-bottom: 2%;
 }
 #about-note {
@@ -382,18 +383,17 @@ h4 {
         padding: 25px 50px;
         border-radius: 10%;
         margin: 10px auto 10px auto;
-        background-color:rgb(142, 166, 142);
-        height: 120px;
-        width: 200px;
-    }
-    .section-two li {
-        border: solid rgb(60, 60, 60) 1px;
-        padding: 25px 50px;
-        border-radius: 10%;
-        margin: 10px auto 10px auto;
-        background-color:rgb(142, 166, 142);
+        background-color:rgb(60, 60, 60);
         height: 120px;
         width: 250px;
+    }
+    .section-two iframe {
+        border: solid rgb(60, 60, 60) 1px;
+        border-radius: 10%;
+        margin: 10px auto 10px auto;
+        background-color:rgb(60, 60, 60);
+        height: 400px;
+        width: 320px;
     }
     
     #faq-section {

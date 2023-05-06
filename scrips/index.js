@@ -117,7 +117,7 @@ const menubtnClick = () =>{
     const menubtn = document.getElementById('menu-btn');
     let nav = document.querySelector('nav');
     menubtn.addEventListener('click', (event) =>{
-        if(nav.style.display === 'none'){
+        if(nav.style.display == 'none'){
             nav.classList.remove('nav-menu');
             nav.style.display = 'flex';
             nav.classList.add('open-close-menu');
@@ -127,3 +127,34 @@ const menubtnClick = () =>{
     })
 }
 menubtnClick();
+
+//checking and acting on online and offline events
+const handleOfflineOnlineandLoadEvents = () =>{
+    const plugin = document.getElementById('dmainman');
+
+    window.addEventListener('online', (event) =>{
+        if(event){
+            console.log('device is online...');
+        }
+    });
+    window.addEventListener('offline', (event) =>{
+        if(event){
+            console.log('device is offline...');
+            plugin.removeAttribute('src');
+            plugin.setAttribute('src', './resources/load-loading.gif');
+            plugin.style.width = 'auto';
+            plugin.style.height = 'auto';
+        }
+    });
+    /*plugin.addEventListener('load', (event) =>{
+        if(event){
+            console.log('the listener is working...');
+            plugin.removeAttribute('src');
+            plugin.setAttribute('src', './resources/load-loading.gif');
+            plugin.style.width = 'auto';
+            plugin.style.height = 'auto';
+        }
+    });*/
+}
+handleOfflineOnlineandLoadEvents();
+
