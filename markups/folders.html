@@ -8,6 +8,7 @@
         <link rel="icon"  href="../resources/app-icon.jpg" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/epub.js/0.2.15/epub.min.js" integrity="sha512-5wAFsOdRwzWaCMwQvCIbT3IPT5ESRki2ikvjsSjbmf1NfGUAobG2VtneOoEFIb7pjmWKS35NOo5slkPjNjG25A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
     <body>
         <!--logo, search and menu section-->
@@ -34,10 +35,10 @@
         <section id="folder-and-output-section">
             <div id="booklist">
                 <h4>eBook List</h4><hr />
-                <label id="book-upload-label" for="book-upload">Local eBooks</label>
+                <label id="book-upload-label" for="book-upload">Upload Local eBooks</label>
                 <input type="file" id="book-upload" accept=".pdf" multiple onchange="handleBookUpload(event)" />
                 <p id="selected-book-info"></p>
-                <button type="button" id="add-ebooklist-btn">Add to eBook List</button><hr />
+                <button type="button" id="add-ebooklist-btn">Upload to eBook List</button><hr />
                 <div id="listed-books"></div>
             </div>
             <div id="books-output">
@@ -53,8 +54,9 @@
                 <li><a href="./about.html">About eBookshelves</a></li>
                 <li><a href="./dev-contact.html">Contact Developers</a></li>
             </div>
-            <p id="rights">All rights reserved @2023 eBookshelves</p>
+            <p id="rights">All rights reserved © 2023 eBookshelves</p>
         </footer>
         <script type="text/javascript" src="../scrips/index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
     </body>
 </html>

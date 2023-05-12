@@ -87,7 +87,7 @@ request.onsuccess = (event) =>{
                     reader.readAsDataURL(event.target.result);
                     reader.onload = (event) =>{
                         PDFObject.embed(event.target.result, '#book-output');
-                        console.log(event.target.result);
+                        //console.log(event.target.result);
                     }
                 }
             }else{
@@ -113,18 +113,6 @@ const handleBookUpload = (event) =>{
 }
 
 // making menu button responsive
-/*const menubtnClick = () =>{
-    document.getElementById('menu-btn').addEventListener('click', () =>{
-        let nav = document.querySelector('nav');
-        if(nav.style.display === 'none'){
-            nav.style.display = 'flex';
-            nav.classList.add('open-close-menu');
-        }else{
-            nav.style.display = 'none';
-        }
-    })
-}
-menubtnClick();*/
 const menubtnClick = () =>{
     document.getElementById('menu-btn').addEventListener('click', () =>{
         let nav = document.querySelector('nav');
@@ -147,7 +135,7 @@ menubtnClick();
 const handleOfflineOnlineandLoadEvents = () =>{
     window.addEventListener('online', (event) =>{
         if(event){
-            console.log('device is online...');
+            console.log('your device is online...');
             document.getElementById('offline-loader').style.display = 'none';
             document.getElementById('dmainman').style.display = 'block';
         }
