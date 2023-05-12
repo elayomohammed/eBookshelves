@@ -328,6 +328,13 @@ h4 {
     padding: 2px;
 }
 
+#explorer {
+    margin: 3.5px 0px 0px 5px;
+    border-radius: 20px;
+    width: 98%;
+    height: 750px;
+}
+
 
 /* media querries */
 @media screen and (min-width: 650px) {
@@ -473,5 +480,12 @@ h4 {
         border-radius: 20px;
         height: 615px;
         padding: 7% 0% 5% 0%;
+    }
+
+    #explorer {
+        margin: 3.5px 0px 0px 0px;
+        border-radius: 20px;
+        width: 98%;
+        height: 750px;
     }
 }

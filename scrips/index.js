@@ -89,6 +89,16 @@ request.onsuccess = (event) =>{
                         PDFObject.embed(event.target.result, '#book-output');
                         //console.log(event.target.result);
                     }
+                    /*reader.onload = (event) =>{
+                        try{
+                            const book = ePub({bookPath: event.target.result});
+                            const renderer = book.renderTo('book-output');
+                            renderer.display();
+                            console.log('this should work but something is wrong elsewhere...');
+                        }catch (error){
+                            console.error(`error: ${error}`);
+                        }
+                    }*/
                 }
             }else{
                 console.log('error reading event data...');
