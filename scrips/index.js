@@ -85,20 +85,61 @@ request.onsuccess = (event) =>{
                     console.log('book retrieved successfully');
                     const reader = new FileReader();
                     reader.readAsDataURL(event.target.result);
-                    reader.onload = (event) =>{
-                        PDFObject.embed(event.target.result, '#book-output');
-                        //console.log(event.target.result);
-                    }
-                    /*reader.onload = (event) =>{
-                        try{
-                            const book = ePub({bookPath: event.target.result});
-                            const renderer = book.renderTo('book-output');
-                            renderer.display();
-                            console.log('this should work but something is wrong elsewhere...');
-                        }catch (error){
-                            console.error(`error: ${error}`);
+                    reader.onload = async (event) =>{
+                        //PDFObject.embed(event.target.result, '#book-output');
+                        let pdfState = {
+                            pdf: null,
+                            currentPage: 1,
+                            zoom: 1
+                        };
+                        const loadedEbook = await pdfjsLib.getDocument(event.target.result);
+                        pdfState.pdf = await loadedEbook;
+
+                        const render = async () =>{
+                            const page = await pdfState.pdf.getPage(pdfState.currentPage);
+                            let canvas = document.getElementById('book-renderer');
+                            let context = canvas.getContext('2d');
+                            let viewport = page.getViewport(pdfState.zoom);
+                            canvas.width = viewport.width;
+                            canvas.height = viewport.height;
+                            page.render({
+                                canvasContext: context,
+                                viewport: viewport
+                            });
                         }
-                    }*/
+                        render();
+
+                        document.getElementById('next-page').addEventListener('click', () =>{
+                            if(pdfState.pdf === null){
+                                return window.alert('no ebook selected');
+                            }else if(pdfState.currentPage > pdfState.pdf._pdfInfo.numPages){
+                                return window.alert('this is the last page');
+                            }
+                            pdfState.currentPage++;
+                            document.getElementById('current-page').value = pdfState.currentPage;
+                            render();
+                        });
+                        document.getElementById('prev-page').addEventListener('click', () =>{
+                            if(pdfState.pdf === null){
+                                return window.alert('no ebook selected');
+                            }else if(pdfState.currentPage === 1){
+                                return window.alert('this is the first page');
+                            }
+                            pdfState.currentPage--;
+                            document.getElementById('current-page').value = pdfState.currentPage;
+                            render();
+                        })
+                        document.getElementById('current-page').addEventListener('keypress', (event) =>{
+                            try{
+                                if(event.target.value >= 1 && event.target.value <= pdfState.pdf._pdfInfo.numPages){
+                                    pdfState.currentPage = Number(event.target.value);
+                                }
+                            }catch(error){
+                                console.error(`error: ${error}`);
+                            }
+                            render();
+                        })
+                    }
                 }
             }else{
                 console.log('error reading event data...');

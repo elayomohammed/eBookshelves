@@ -205,9 +205,25 @@ h4 {
     overflow: auto;
 }
 #book-output {
-    height: 650px;
     width: 99%;
     margin: 0px 2px 2px 2px;
+    height: 675px;
+    overflow: auto;
+}
+#book-renderer {
+    width: 99%;
+    margin: 0px 2px 2px 2px;
+    height: 665px;
+}
+#controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.prevnext {
+    background-color: rgb(60, 60, 60);
+    border-radius: 0px 5px 0px 5px;
+    cursor: pointer;
 }
 #books-output {
     margin-left: 30.5%;
@@ -384,6 +400,12 @@ h4 {
 
     body {
         height: 98%;
+    }
+
+    #book-output {
+        width: 99%;
+        height: 635px;
+        overflow: auto;
     }
 
     .section-one, .section-two {

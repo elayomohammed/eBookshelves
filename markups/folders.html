@@ -8,7 +8,7 @@
         <link rel="icon"  href="../resources/app-icon.jpg" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js"></script>
     </head>
     <body>
         <!--logo, search and menu section-->
@@ -42,8 +42,21 @@
                 <div id="listed-books"></div>
             </div>
             <div id="books-output">
-                <h4 id="book-title">Book Title</h4><hr />
-                <div id="book-output" style="color: white; text-align: center;">From your booklist in the left hand side, select a book to render it here...</div>
+                <div id="book-output" style="color: white; text-align: center;">
+                    <h4 id="book-title">Book Title</h4><hr />
+                    <canvas id="book-renderer"></canvas>
+                </div>
+                <div id="controls">
+                    <div id="nav-controls">
+                        <button id="prev-page" class="prevnext">Prev Page</button>
+                        <input id="current-page" type="number" value="1" />
+                        <button id="next-page" class="prevnext">Next Page</button>
+                    </div>
+                    <div id="zoom-control">
+                        <button id="zoom-out" class="prevnext">-</button><span> zoom </span>
+                        <button id="zoom-in" class="prevnext">+</button>
+                    </div>
+                </div>
             </div>
         </section>
 
