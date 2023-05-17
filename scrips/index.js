@@ -87,14 +87,11 @@ request.onsuccess = (event) =>{
                     reader.readAsDataURL(event.target.result);
                     reader.onload = async (event) =>{
                         //PDFObject.embed(event.target.result, '#book-output');
-                        let pdfState = {
-                            pdf: null,
+                        const pdfState = {
+                            pdf: await pdfjsLib.getDocument(event.target.result),
                             currentPage: 1,
-                            zoom: 1
+                            zoom: 1.5
                         };
-                        const loadedEbook = await pdfjsLib.getDocument(event.target.result);
-                        pdfState.pdf = await loadedEbook;
-
                         const render = async () =>{
                             const page = await pdfState.pdf.getPage(pdfState.currentPage);
                             let canvas = document.getElementById('book-renderer');
@@ -102,42 +99,54 @@ request.onsuccess = (event) =>{
                             let viewport = page.getViewport(pdfState.zoom);
                             canvas.width = viewport.width;
                             canvas.height = viewport.height;
-                            page.render({
+                            document.getElementById('current-page').value = pdfState.currentPage;
+                            await page.render({
                                 canvasContext: context,
                                 viewport: viewport
                             });
                         }
                         render();
 
-                        document.getElementById('next-page').addEventListener('click', () =>{
-                            if(pdfState.pdf === null){
+                        /*document.getElementById('next-page').addEventListener('click', () =>{
+                            if(pdfState.pdf == null){
                                 return window.alert('no ebook selected');
-                            }else if(pdfState.currentPage > pdfState.pdf._pdfInfo.numPages){
+                            }else if(pdfState.currentPage >= pdfState.pdf._pdfInfo.numPages){
                                 return window.alert('this is the last page');
+                            }else {
+                                pdfState.currentPage++;
+                                document.getElementById('current-page').value = pdfState.currentPage;
+                                render();
                             }
-                            pdfState.currentPage++;
-                            document.getElementById('current-page').value = pdfState.currentPage;
-                            render();
-                        });
-                        document.getElementById('prev-page').addEventListener('click', () =>{
-                            if(pdfState.pdf === null){
-                                return window.alert('no ebook selected');
-                            }else if(pdfState.currentPage === 1){
-                                return window.alert('this is the first page');
+                        });*/
+                        document.getElementById('next-page').addEventListener('click', async () =>{
+                            if(pdfState.pdf != null && pdfState.currentPage <= pdfState.pdf._pdfInfo.numPages){
+                                pdfState.currentPage++;
+                                document.getElementById('current-page').value = pdfState.currentPage;
+                                return await render();
+                            }else{
+                                //return window.alert('this is the last page');
+                                return console.log('this is the last page');
                             }
-                            pdfState.currentPage--;
-                            document.getElementById('current-page').value = pdfState.currentPage;
-                            render();
                         })
-                        document.getElementById('current-page').addEventListener('keypress', (event) =>{
+                        document.getElementById('prev-page').addEventListener('click', async() =>{
+                            if(pdfState.pdf != null && pdfState.currentPage > 1){
+                                pdfState.currentPage--;
+                                document.getElementById('current-page').value = pdfState.currentPage;
+                                return await render();
+                            }else{
+                                //return window.alert('this is the first page');
+                                return console.log('this is the first page');
+                            }
+                        })
+                        document.getElementById('current-page').addEventListener('keypress', async (event) =>{
                             try{
                                 if(event.target.value >= 1 && event.target.value <= pdfState.pdf._pdfInfo.numPages){
                                     pdfState.currentPage = Number(event.target.value);
+                                    return await render();
                                 }
                             }catch(error){
                                 console.error(`error: ${error}`);
                             }
-                            render();
                         })
                     }
                 }

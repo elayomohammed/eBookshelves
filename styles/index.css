@@ -207,13 +207,13 @@ h4 {
 #book-output {
     width: 99%;
     margin: 0px 2px 2px 2px;
-    height: 675px;
-    overflow: auto;
+    height: 670px;
 }
 #book-renderer {
-    width: 99%;
+    width: 100%;
     margin: 0px 2px 2px 2px;
-    height: 665px;
+    height: 97.5%;
+
 }
 #controls {
     display: flex;
@@ -224,13 +224,13 @@ h4 {
     background-color: rgb(60, 60, 60);
     border-radius: 0px 5px 0px 5px;
     cursor: pointer;
+    color: white;
 }
 #books-output {
     margin-left: 30.5%;
     width: 70%;
     height: auto;
     border: solid rgb(60, 60, 60) 1px;
-    border-radius: 20px 20px 20px 5px;
     margin-top: 0%;
 }
 .injected-booklist {
