@@ -104,10 +104,19 @@ h4 {
     border: solid rgb(60, 60, 60) 1px;
     padding: 2px 2px;
     border-radius: 5%;
-    margin: 10px auto 10px auto;
     background-color:rgb(60, 60, 60);
     height: 450px;
     width: 330px;
+    margin: 5px;
+}
+#twitter-plugin {
+    border: solid rgb(60, 60, 60) 1px;
+    padding: 2px 2px;
+    border-radius: 5%;
+    background-color:rgb(60, 60, 60);
+    height: 449px;
+    width: 315px;
+    text-align: center;
 }
 
 #recent-book-title {
@@ -205,15 +214,17 @@ h4 {
     overflow: auto;
 }
 #book-output {
-    width: 99%;
+    width: 100%;
     margin: 0px 2px 2px 2px;
     height: 670px;
 }
 #book-renderer {
-    width: 100%;
-    margin: 0px 2px 2px 2px;
-    height: 97.5%;
-
+    width: 100%;;
+    padding: 3px;
+    height: 622px;
+    overflow: auto;
+    background-color: rgb(60, 60, 60);
+    border-radius: 5px;
 }
 #controls {
     display: flex;
@@ -227,10 +238,9 @@ h4 {
     color: white;
 }
 #books-output {
-    margin-left: 30.5%;
+    margin-left: 30.1%;
     width: 70%;
     height: auto;
-    border: solid rgb(60, 60, 60) 1px;
     margin-top: 0%;
 }
 .injected-booklist {

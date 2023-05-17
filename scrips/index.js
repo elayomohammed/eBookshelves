@@ -85,7 +85,7 @@ request.onsuccess = (event) =>{
                     console.log('book retrieved successfully');
                     const reader = new FileReader();
                     reader.readAsDataURL(event.target.result);
-                    reader.onload = async (event) =>{
+                    reader.onloadend = async (event) =>{
                         //PDFObject.embed(event.target.result, '#book-output');
                         const pdfState = {
                             pdf: await pdfjsLib.getDocument(event.target.result),
@@ -107,17 +107,6 @@ request.onsuccess = (event) =>{
                         }
                         render();
 
-                        /*document.getElementById('next-page').addEventListener('click', () =>{
-                            if(pdfState.pdf == null){
-                                return window.alert('no ebook selected');
-                            }else if(pdfState.currentPage >= pdfState.pdf._pdfInfo.numPages){
-                                return window.alert('this is the last page');
-                            }else {
-                                pdfState.currentPage++;
-                                document.getElementById('current-page').value = pdfState.currentPage;
-                                render();
-                            }
-                        });*/
                         document.getElementById('next-page').addEventListener('click', async () =>{
                             if(pdfState.pdf != null && pdfState.currentPage <= pdfState.pdf._pdfInfo.numPages){
                                 pdfState.currentPage++;
@@ -176,7 +165,6 @@ const handleBookUpload = (event) =>{
 const menubtnClick = () =>{
     document.getElementById('menu-btn').addEventListener('click', () =>{
         let nav = document.querySelector('nav');
-        console.log(nav.style.display);
         if(nav.style.display === ''){
             nav.style.display = 'flex';
             nav.classList.add('open-close-menu');
