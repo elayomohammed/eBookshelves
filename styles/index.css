@@ -88,6 +88,9 @@ h4 {
     justify-content: space-around;
     align-items: center;
     height: fit-content;
+    border: solid rgb(60, 60, 60) 1px;
+    border-radius: 5px;
+    background-color: rgb(60, 60, 60);
 }
 .section-two {
     list-style-type: none;
@@ -111,6 +114,9 @@ h4 {
     cursor: pointer;
     font-size:x-small;
     color: white;
+}
+.section-one li:hover {
+    scale: 1.2;
 }
 .section-two div iframe, img {
     padding: 2px 2px;
