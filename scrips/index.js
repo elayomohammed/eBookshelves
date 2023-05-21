@@ -76,7 +76,7 @@ request.onsuccess = (event) =>{
             if(event){
                 document.getElementById('book-title').textContent = event.target.textContent;
                 // use the textContent to search and retrive and render book from the db
-                const transaction = db.transaction('booklist').objectStore('booklist');
+                const transaction = db.transaction('booklist', 'readonly').objectStore('booklist');
                 const getBookToRenderTx = transaction.get(event.target.textContent);
                 getBookToRenderTx.onerror = (event) =>{
                     console.error(`error getting book: ${event.target.error}`);
@@ -138,11 +138,20 @@ request.onsuccess = (event) =>{
                             }
                         })
                     }
+                    const data = event.target.result.name;
+                    addToHistory(data);
                 }
             }else{
                 console.log('error reading event data...');
             }
         })
+        const addToHistory = async (data) =>{
+            const history = JSON.parse(localStorage.getItem('functionHistory')) || [];
+            history.push({data});
+            localStorage.setItem('functionHistory', JSON.stringify(history));
+            // rendering history to homepage
+            const last3history = [...history].splice(-3).reverse();
+        }
     }
     renderSingleBook();
 }
@@ -198,3 +207,17 @@ const handleOfflineOnlineandLoadEvents = () =>{
 }
 handleOfflineOnlineandLoadEvents();
 
+//update last book read history
+const addToHistory = async () =>{
+    const history = JSON.parse(localStorage.getItem('functionHistory')) || [];
+    // rendering history to homepage
+    const last3history = [...history].splice(-3).reverse();
+    console.log(JSON.stringify(last3history));
+    for(i = 0; i < last3history.length; i++){
+        const history = document.createElement('li');
+        history.textContent = await last3history[i].data;
+        const output = document.getElementById('section-one');
+        output.appendChild(history);
+    }
+}
+addToHistory();

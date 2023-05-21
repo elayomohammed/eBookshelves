@@ -81,7 +81,15 @@ h4 {
     margin-top: 0px;
     border-radius: 20px;
 }
-.section-one, .section-two {
+.section-one {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: fit-content;
+}
+.section-two {
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -93,12 +101,16 @@ h4 {
 }
 .section-one li {
     border: solid rgb(60, 60, 60) 1px;
-    padding: 25px 50px;
-    border-radius: 10%;
-    margin: 10px auto 10px auto;
+    padding: 5px 5px 10px 5px;
+    border-radius: 5%;
+    box-shadow: 50px;
+    margin: auto;
     background-color:rgb(60, 60, 60);
-    height: 120px;
-    width: 150px;
+    height: 5px;
+    width: fit-content;
+    cursor: pointer;
+    font-size:x-small;
+    color: white;
 }
 .section-two div iframe, img {
     padding: 2px 2px;
@@ -415,7 +427,7 @@ h4 {
         overflow: auto;
     }
 
-    .section-one, .section-two {
+    /*.section-one, .section-two {
         list-style-type: none;
         display: flex;
         flex-direction: column;
@@ -434,6 +446,40 @@ h4 {
         background-color:rgb(60, 60, 60);
         height: 120px;
         width: 250px;
+    }*/
+    .section-one {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: fit-content;
+        border: solid rgb(60, 60, 60) 1px;
+        border-radius: 5px;
+        background-color: rgb(60, 60, 60);
+    }
+    .section-two {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border: solid rgb(88, 85, 85) 1px;
+        border-radius: 10px;
+        height: fit-content;
+    }
+    .section-one li {
+        border: solid rgb(60, 60, 60) 1px;
+        padding: 5px 5px 10px 5px;
+        border-radius: 5%;
+        box-shadow: 50px;
+        margin: auto;
+        background-color:rgb(60, 60, 60);
+        height: 5px;
+        width: fit-content;
+        cursor: pointer;
+        font-size:x-small;
+        color: white;
     }
     .section-two div iframe, img {
         border: solid rgb(60, 60, 60) 1px;
